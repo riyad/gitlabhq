@@ -4,9 +4,6 @@ window.updatePage = (data) ->
 window.slugify = (text) ->
   text.replace(/[^-a-zA-Z0-9]+/g, '_').toLowerCase()
 
-window.ajaxGet = (url) ->
-  $.ajax({type: "GET", url: url, dataType: "script"})
-
 window.errorMessage = (message) ->
   ehtml = $("<p>")
   ehtml.addClass("error_message")

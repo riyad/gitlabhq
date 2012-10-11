@@ -33,7 +33,7 @@ $ ->
 
       History.Adapter.bind window, 'statechange', ->
         state = History.getState()
-        window.ajaxGet(state.url)
+        $.getScript(state.url)
     )(window)
 
   # See if there are lines selected

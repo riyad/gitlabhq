@@ -39,6 +39,6 @@
 - unless tree.is_blob?
   :javascript
     // Load last commit log for each file in tree
-    $(window).load(function(){
-      ajaxGet('#{@logs_path}');
+    $(function(){
+      $.getScript('#{@logs_path}');
     });
