@@ -1,5 +1,5 @@
-:javascript
-  $(function() {
+- content_for :script_on_load do
+  :plain
     GitLab.GfmAutoComplete.Members.url = "#{ "/api/v3/projects/#{@project.id}/members" if @project }";
     GitLab.GfmAutoComplete.Members.params.private_token = "#{current_user.private_token}";
 
@@ -14,4 +14,3 @@
     });
 
     GitLab.GfmAutoComplete.setup();
-  });

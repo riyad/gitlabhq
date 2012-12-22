@@ -10,15 +10,13 @@
         git merge origin/#{@merge_request.source_branch}
         git push origin #{@merge_request.target_branch}
 
-
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     var modal = $('#modal_merge_info').modal({modal: true, show:false});
     $('.how_to_merge_link').bind("click", function(){
       modal.show();
     });
     $('.modal-header .close').bind("click", function(){
       modal.hide();
-    })
-  })
+    });
 

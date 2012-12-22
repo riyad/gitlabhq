@@ -6,11 +6,12 @@
   #holder.graph
     .loading.loading-gray
 
-:javascript
-  var branch_graph;
-  $(function(){
-    branch_graph = new BranchGraph($("#holder"), {
-      url: '#{url_for controller: 'projects', action: 'graph', format: :json}',
-      commit_url: '#{url_for controller: 'projects', action: 'show'}/commits/%s'
+- content_for :script do
+  :plain
+    var branch_graph;
+    $(function(){
+      branch_graph = new BranchGraph($("#holder"), {
+        url: '#{url_for controller: 'projects', action: 'graph', format: :json}',
+        commit_url: '#{url_for controller: 'projects', action: 'show'}/commits/%s'
+      });
     });
-  });

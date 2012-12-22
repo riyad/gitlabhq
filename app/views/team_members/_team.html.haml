@@ -7,10 +7,8 @@
       - members.sort_by(&:user_name).each do |up|
         = render(partial: 'team_members/show', locals: {member: up})
 
-
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     $('.repo-access-select, .project-access-select').live("change", function() {
       $(this.form).submit();
     });
-  })

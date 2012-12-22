@@ -29,16 +29,17 @@
           %strong= @ref
       = link_to "Cancel", project_tree_path(@project, @id), class: "btn cancel-btn", confirm: "Are you sure?"
 
-:javascript
-  var ace_mode = "#{@tree.language.try(:ace_mode)}";
-  var editor = ace.edit("editor");
-  if (ace_mode) {
-    editor.getSession().setMode('ace/mode/' + ace_mode);
-  }
+- content_for :script_on_load do
+  :plain
+    var ace_mode = "#{@tree.language.try(:ace_mode)}";
+    var editor = ace.edit("editor");
+    if (ace_mode) {
+      editor.getSession().setMode('ace/mode/' + ace_mode);
+    }
 
-  disableButtonIfEmptyField("#commit_message", ".js-commit-button");
+    disableButtonIfEmptyField("#commit_message", ".js-commit-button");
 
-  $(".js-commit-button").click(function(){
-    $("#file_content").val(editor.getValue());
-    $(".file-editor form").submit();
-  });
+    $(".js-commit-button").click(function(){
+      $("#file_content").val(editor.getValue());
+      $(".file-editor form").submit();
+    });

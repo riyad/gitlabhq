@@ -8,5 +8,6 @@
     = image_tag "ajax_loader.gif"
     %h3 Saving project. Please wait a few minutes
 
-:javascript
-  $(function(){ new Projects(); });
+- content_for :script_on_load do
+  :plain
+    new Projects();

@@ -53,8 +53,8 @@
 
 
 
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     $("#issue_label_list")
       .bind( "keydown", function( event ) {
         if ( event.keyCode === $.ui.keyCode.TAB &&
@@ -80,5 +80,4 @@
           return false;
         }
       });
-  });
 

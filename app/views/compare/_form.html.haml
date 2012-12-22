@@ -26,8 +26,8 @@
 
 
 
-:javascript
-  $(function() {
+- content_for :script_on_load do
+  :plain
     var availableTags = #{@project.ref_names.to_json};
 
     $("#from, #to").autocomplete({
@@ -36,4 +36,3 @@
     });
 
     disableButtonIfEmptyField('#to', '.commits-compare-btn');
-  });

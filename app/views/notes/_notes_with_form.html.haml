@@ -5,7 +5,6 @@
 - if can? current_user, :write_note, @project
   = render "notes/common_form"
 
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     NoteList.init("#{tid}", "#{tt}", "#{project_notes_path(@project)}");
-  });

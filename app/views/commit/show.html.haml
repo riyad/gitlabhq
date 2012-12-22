@@ -3,9 +3,8 @@
 = render "notes/notes_with_form", tid: @commit.id, tt: "commit"
 = render "notes/per_line_form"
 
-
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     PerLineNotes.init();
     var w, h;
     $('.diff_file').each(function(){
@@ -19,7 +18,5 @@
           , h = event.currentTarget.naturalHeight;
         $('.image.diff_added .image-info', this).append(' | <b>W:</b> ' + w + 'px | <b>H:</b> ' + h + 'px');
       }, this));
-      
     });
-    
   });

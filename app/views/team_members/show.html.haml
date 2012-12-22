@@ -52,10 +52,10 @@
               = f.select :project_access, options_for_select(Project.access_options, @team_member.project_access), {}, class: "project-access-select", disabled: !allow_admin
   %hr
   = render @events
-:javascript
-  $(function(){
+
+- content_for :script_on_load do
+  :plain
     $('.repo-access-select, .project-access-select').live("change", function() {
       $(this.form).submit();
     });
-  })
 

@@ -1,6 +1,5 @@
 = render "show"
 
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     PerLineNotes.init();
-  });

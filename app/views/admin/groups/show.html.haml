@@ -79,8 +79,8 @@
     .form-actions
       = submit_tag 'Add', class: "btn primary"
 
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     var modal = $('.change-owner-holder');
     $('.change-owner-link').bind("click", function(){
       $(this).hide();
@@ -89,6 +89,4 @@
     $('.change-owner-cancel-link').bind("click", function(){
       modal.hide();
       $('.change-owner-link').show();
-    })
-  })
-
+    });

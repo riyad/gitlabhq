@@ -37,8 +37,7 @@
       = render "tree/readme", readme: tree.readme
 
 - unless tree.is_blob?
-  :javascript
-    // Load last commit log for each file in tree
-    $(function(){
+  - content_for :script_on_load do
+    :plain
+      // Load last commit log for each file in tree
       $.getScript('#{@logs_path}');
-    });

@@ -5,7 +5,6 @@
 %ul.reversed#notes-list
 .notes-status
 
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     NoteList.init("#{tid}", "#{tt}", "#{project_notes_path(@project)}");
-  });

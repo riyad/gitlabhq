@@ -4,5 +4,6 @@
 .content_list= render @events
 .loading.hide
 
-:javascript
-  $(function(){ Pager.init(20); });
+- content_for :script_on_load do
+  :plain
+    Pager.init(20);

@@ -10,8 +10,6 @@
 .loading{ style: "display:none;"}
 
 - if @commits.count == @limit
-  :javascript
-    $(function(){
+  - content_for :script_on_load do
+    :plain
       CommitsList.init("#{@ref}", #{@limit});
-    });
-

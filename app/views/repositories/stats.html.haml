@@ -27,8 +27,8 @@
             = author.commits
 
 
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     var labels = [#{@graph.labels.to_json}];
     var commits = [#{@graph.commits.join(', ')}];
     var r = Raphael('activity-chart');
@@ -38,4 +38,3 @@
       [commits],
       {colors:["#456"]}
     ).label(labels, true);
-  })

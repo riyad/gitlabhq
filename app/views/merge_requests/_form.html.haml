@@ -56,8 +56,8 @@
       = link_to project_merge_request_path(@project, @merge_request), class: "btn cancel-btn" do
         Cancel
 
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     disableButtonIfEmptyField("#merge_request_title", ".save-btn");
     var source_branch = $("#merge_request_source_branch");
     var target_branch = $("#merge_request_target_branch");
@@ -72,4 +72,3 @@
     target_branch.live("change", function() {
       $.get("#{branch_to_project_merge_requests_path(@project)}", {ref: $(this).val() });
     });
-  });

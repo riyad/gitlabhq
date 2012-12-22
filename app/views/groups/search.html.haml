@@ -69,7 +69,7 @@
               %tr
                 %td
                   %h4.nothing_here_message No Issues
-  :javascript
-    $(function() {
-      $(".search_results .term").highlight("#{params[:search]}");
-    })
+
+- content_for :script_on_load do
+  :plain
+    $(".search_results .term").highlight("#{params[:search]}");

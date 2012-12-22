@@ -31,10 +31,9 @@
                       = check_box_tag :notify_author, 1 , @note.noteable_type == "Commit"
                       %span Commit author
 
-:javascript
-  $(function(){
+- content_for :script_on_load do
+  :plain
     $(".per_line_form .hide-button").bind("click", function(){
       $('.per_line_form').hide();
       return false;
     });
-  });
